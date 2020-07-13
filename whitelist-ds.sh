@@ -14,7 +14,7 @@ if [ "$(id -u)" != "0" ] ; then
 	exit 2
 fi
 
-curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/domain/whitelist.txt | sudo tee -a "${PIHOLE_LOCATION}"/whitelist.txt >/dev/null
+curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/whitelist.txt | sudo tee -a "${PIHOLE_LOCATION}"/whitelist.txt >/dev/null
 echo -e " ${TICK} \e[32m Menambhakan domain ke daftar whitelist pihole... \e[0m"
 sleep 0.1
 echo -e " ${TICK} \e[32m menghapus kemungkinan domain yang sama... \e[0m"
