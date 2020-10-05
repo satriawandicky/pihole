@@ -33,3 +33,6 @@ then
 	echo -e "\n\n"
 
 fi
+
+sudo pihole restartdns
+

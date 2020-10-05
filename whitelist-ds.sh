@@ -29,3 +29,5 @@ echo -e " ${TICK} \e[32m Selesai... \e[0m"
 echo -e " \e[1m  salam @satriawandicky \e[0m"
 echo -e " \e[1m  Happy AdBlocking :)\e[0m"
 echo -e "\n\n"
+
+sudo pihole restartdns
