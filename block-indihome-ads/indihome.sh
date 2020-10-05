@@ -9,10 +9,10 @@ blackListFile='/etc/pihole/black.list'
 blacklist='/etc/pihole/blacklist.txt'
 
 # Get the list from the GitHub 
-sudo curl 'https://raw.githubusercontent.com/satriawandicky/pihole/master/iklan-indihome.list'\
+sudo curl 'https://raw.githubusercontent.com/satriawandicky/pihole/block-indihome-ads/master/iklan-indihome.list'\
 >>$blacklist
 
-sudo curl 'https://raw.githubusercontent.com/satriawandicky/pihole/master/iklan-indihome.list'\
+sudo curl 'https://raw.githubusercontent.com/satriawandicky/pihole/block-indihome-ads/master/iklan-indihome.list'\
 >>$blackListFile
 
 wait 
