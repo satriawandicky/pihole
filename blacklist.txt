@@ -1,3 +1,5 @@
+#indihome
+
 x-tags.net
 a01.uadexchange.com
 cdn.uzone.id
@@ -20,4 +22,18 @@ welcome.indihome.co.id
 upoint.id
 uzone.id
 
-
+#File lama
+service.adxoo.com
+www.cdn.apidev.icu
+syndication.adxoo.com
+www.luxury111jaya.com
+rebrand.ly
+video-xsp1-2.xx.fbcdn.net
+video-xsp1-1.xx.fbcdn.net
+scontent-xsp1-1.xx.fbcdn.net
+external-xsp1-1.xx.fbcdn.net
+scontent-xsp1-2.xx.fbcdn.net
+static.xx.fbcdn.net
+onesignal.com
+luxury138.cc
+1.bp.blogspot.com

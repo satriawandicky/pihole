@@ -163,3 +163,14 @@ r3---sn-npoe7n7r.googlevideo.com
 r4---sn-npoe7n7s.googlevideo.com
 r1---sn-npoeen7d.googlevideo.com
 r1---sn-npoeen7y.googlevideo.com
+
+
+www.gdriveplayer.club
+gdriveplayer.co
+gdriveplayer.us
+gdriveplayer.club
+www.redirector.googlevideo.com
+
+#font
+www.fonts.gstatic.com
+font.gstatic.com
