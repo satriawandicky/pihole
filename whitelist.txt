@@ -174,3 +174,7 @@ www.redirector.googlevideo.com
 #font
 www.fonts.gstatic.com
 font.gstatic.com
+
+#gmail issue
+accounts.google.com
+mail.google.com
