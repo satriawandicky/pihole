@@ -1,6 +1,6 @@
 TICK="[\e[32m ✔ \e[0m]"
 PIHOLE_LOCATION="/etc/pihole"
-GRAVITY_UPDATE_COMMAND="pihole -regex"
+GRAVITY_UPDATE_COMMAND="pihole --regex -q"
 
 #script regex -- untuk mencegah false positif
 echo -e " \e[1m Script ini akan mendownload dan menambahkan regex dari repository dari regex.txt \e[0m"
