@@ -15,7 +15,6 @@ then
 		echo "Script ini membutuhkan akses root... tolong masuk sebagai root ya."
 		exit 2
 	fi
- 
 
 	curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/referral.txt | sudo tee -a "${PIHOLE_LOCATION}"/whitelist.txt >/dev/null
 	echo -e " ${TICK} \e[32m Menambahkan domain ke whitelist... \e[0m"

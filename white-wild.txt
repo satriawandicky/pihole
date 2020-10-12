@@ -1,0 +1,5 @@
+google.com
+debian.com
+ubuntu.com
+microsoft.com
+apple.com
