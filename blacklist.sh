@@ -1,6 +1,6 @@
 TICK="[\e[32m ✔ \e[0m]"
 PIHOLE_LOCATION="/etc/pihole"
-GRAVITY_UPDATE_COMMAND="pihole -b -nr"
+GRAVITY_UPDATE_COMMAND="pihole -b -q"
 
 #script blacklist -- untuk mencegah false positif
 echo -e " \e[1m Script ini akan mendownload dan menambahkan domain dari repository dari blocklist.txt \e[0m"
