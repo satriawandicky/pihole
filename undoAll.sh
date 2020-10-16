@@ -32,6 +32,7 @@ ${GRAVITY_UNDO_REGEX} $(cat /etc/pihole/regex.txt | xargs) > /dev/null
 
 echo " ${TICK} \e[32m Selesai undo regex... \e[0m"
 
+sleep 1
 #undo blocklist
 
 
