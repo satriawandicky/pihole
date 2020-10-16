@@ -16,9 +16,9 @@ fi
 
 #undo wildcard
 GRAVITY_UNDO_WILD="pihole --wild -d"
-mv "${PIHOLE_LOCATION}"/wildcard.txt "${PIHOLE_LOCATION}"/wildcard.txt.old && cat "${PIHOLE_LOCATION}"/wildcard.txt.old | sort | uniq > "${PIHOLE_LOCATION}"/undo-wildcard.txt
+mv "${PIHOLE_LOCATION}"/wildcard.txt "${PIHOLE_LOCATION}"/wildcard.txt.old && cat "${PIHOLE_LOCATION}"/wildcard.txt.old | sort | uniq > "${PIHOLE_LOCATION}"/wildcard.txt
 echo " [...] \e[32m undo list sebelumnya....harap tunggu \e[0m"
-${GRAVITY_UNDO_WILD} $(cat /etc/pihole/undo-wildcard.txt | xargs) > /dev/null
+${GRAVITY_UNDO_WILD} $(cat /etc/pihole/wildcard.txt | xargs) > /dev/null
 echo " ${TICK} \e[32m Selesai undo wildcard... \e[0m"
 echo " \e[1m ................... \e[0m"
 sleep 0.1
@@ -32,7 +32,7 @@ sleep 1
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
 echo " [...] \e[32m mengupdate list berikut.... \e[0m"
 echo "\n"
-sort -u /etc/pihole/wildcard.txt
+cat /etc/pihole/wildcard.txt
 echo "\n"
 
 sleep 1
