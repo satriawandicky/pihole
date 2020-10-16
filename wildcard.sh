@@ -28,17 +28,22 @@ curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard
 echo " ${TICK} \e[32m Menambahkan domain ke daftar wildcard pihole... \e[0m"
 sleep 0.1
 echo " ${TICK} \e[32m menghapus kemungkinan domain yang sama... \e[0m"
-sort -u /etc/pihole/wildcard.txt > /etc/pihole/wildcard.txt
 sleep 1
 
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
+echo " [...] \e[32m mengupdate list berikut.... \e[0m"
+echo "\n"
+cat /etc/pihole/wildcard.txt
+echo "\n"
+
 ${GRAVITY_UPDATE_COMMAND} $(cat /etc/pihole/wildcard.txt | xargs) > /dev/null
 echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
 echo " ${TICK} \e[32m Selesai... \e[0m"
-
-cat /etc/pihole/wildcard.txt
+echo "\n"
+echo "\n------------------------------------\n"
 echo " \e[1m  salam @satriawandicky \e[0m"
 echo " \e[1m  Happy AdBlocking :)\e[0m"
+echo "\n------------------------------------\n"
 echo "\n\n"
 
 sudo pihole -g
