@@ -22,7 +22,7 @@ ${GRAVITY_UNDO_WILD} $(cat /etc/pihole/undo-wildcard.txt | xargs) > /dev/null
 echo " ${TICK} \e[32m Selesai undo wildcard... \e[0m"
 echo " \e[1m ................... \e[0m"
 sleep 0.1
-curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard.txt | sudo tee -a "${PIHOLE_LOCATION}"/wildcard.txt && sort -u "${PIHOLE_LOCATION}"/wildcard.txt > /dev/null
+curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard.txt | sudo tee -a "${PIHOLE_LOCATION}"/wildcard.txt | sort | uniq > /dev/null
 echo " ${TICK} \e[32m Menambahkan domain ke daftar wildcard pihole... \e[0m"
 sleep 0.1
 echo " ${TICK} \e[32m menghapus kemungkinan domain yang sama... \e[0m"
