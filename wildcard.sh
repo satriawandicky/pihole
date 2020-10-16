@@ -24,7 +24,7 @@ echo " ${TICK} \e[32m Selesai undo wildcard... \e[0m"
 sleep 1
 
 
-curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard.txt | sudo tee -a "${PIHOLE_LOCATION}"/wildcard.txt | sort | uniq > /dev/null
+curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard.txt | sudo tee -a "${PIHOLE_LOCATION}"/wildcard.txt && sort -u "${PIHOLE_LOCATION}"/wildcard.txt > /dev/null
 echo " ${TICK} \e[32m Menambahkan domain ke daftar wildcard pihole... \e[0m"
 sleep 0.1
 echo " ${TICK} \e[32m menghapus kemungkinan domain yang sama... \e[0m"
@@ -33,7 +33,7 @@ sleep 1
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
 echo " [...] \e[32m mengupdate list berikut.... \e[0m"
 echo "\n"
-cat /etc/pihole/wildcard.txt
+sort -u /etc/pihole/wildcard.txt
 echo "\n"
 
 ${GRAVITY_UPDATE_COMMAND} $(cat /etc/pihole/wildcard.txt | xargs) > /dev/null
