@@ -16,7 +16,6 @@ fi
 
 #undo wildcard
 GRAVITY_UNDO_WILD="pihole --wild -d"
-curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard.txt | sudo tee -a "${PIHOLE_LOCATION}"/wildcard.txt > /dev/null
 mv "${PIHOLE_LOCATION}"/wildcard.txt "${PIHOLE_LOCATION}"/wildcard.txt.old && cat "${PIHOLE_LOCATION}"/wildcard.txt.old | sort | uniq > "${PIHOLE_LOCATION}"/undo-wildcard.txt
 echo " [...] \e[32m undo list sebelumnya....harap tunggu \e[0m"
 ${GRAVITY_UNDO_WILD} $(cat /etc/pihole/undo-wildcard.txt | xargs) > /dev/null
