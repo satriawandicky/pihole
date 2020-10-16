@@ -123,7 +123,6 @@ google-{0,}(analytics{0,}|(ad|tag)manager)\.[a-z]{2,7}$
 (^|\.)taboola\.com$
 (^|\.)hotjar\.com$
 (^|\.)piwik$
-(^|\.)adobelogin\.com$
 (^|\.)cleverpush\.com$
 (^|\.)footprintdns\.com$
 (^|\.)localhookup$
@@ -136,7 +135,6 @@ google-{0,}(analytics{0,}|(ad|tag)manager)\.[a-z]{2,7}$
 (\.|^)tgbmx\.xyz$
 (\.|^)contentabc\.com$
 (\.|^)2020mustang\.com$
-^(.+[_.-])?(facebook|fb(cdn|sbx)?|tfbnw)\.[^.]+$
 (\.|^)logsss\.com$
 (\.|^)izatcloud\.net$
 (\.|^)trafiq\.bid$
@@ -144,8 +142,6 @@ google-{0,}(analytics{0,}|(ad|tag)manager)\.[a-z]{2,7}$
 (\.|^)aklamio\.com$
 (\.|^)track18\.com$
 (\.|^)clicahy\.com$
-(\.|^)intl\.xiaomi\.com$
-
 #wildcard by pihole
 #(\.|^)porn\.com$
 

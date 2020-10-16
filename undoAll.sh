@@ -2,6 +2,7 @@ TICK="[\e[32m ✔ \e[0m]"
 PIHOLE_LOCATION="/etc/pihole"
 
 GRAVITY_UNDO_WILD="pihole --wild -d"
+GRAVITY_UNDO_REGEX="pihole --regex -d"
 GRAVITY_UNDO_WHITELIST="pihole -w -d"
 
 #script wildcard -- untuk mencegah false positif
@@ -21,20 +22,28 @@ echo " ${TICK} \e[32m Undo wildcard, whitelist, blocklist dari local list... \e[
 #undo wildcard
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
 ${GRAVITY_UNDO_WILD} $(cat /etc/pihole/wildcard.txt | xargs) > /dev/null
-echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
-echo " ${TICK} \e[32m Selesai... \e[0m"
+echo " ${TICK} \e[32m Selesai undo wildcard... \e[0m"
 
 sleep 1
 
-#undo whitelist
-echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
-${GRAVITY_UNDO_WHITELIST} $(cat /etc/pihole/whitelist.txt | xargs) > /dev/null
-echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
-echo " ${TICK} \e[32m Selesai... \e[0m"
+#undo regex
+echo " [...] \e[32m Pi-hole gravity memperbarui txt....harap tunggu \e[0m"
+${GRAVITY_UNDO_REGEX} $(cat /etc/pihole/regex.txt | xargs) > /dev/null
 
+echo " ${TICK} \e[32m Selesai undo regex... \e[0m"
+
+#undo blocklist
+
+
+#undo whitelist
+# echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
+# ${GRAVITY_UNDO_WHITELIST} $(cat /etc/pihole/whitelist.txt | xargs) > /dev/null
+# echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
+# echo " ${TICK} \e[32m Selesai... \e[0m"
+sudo pihole -g
+sudo pihole restartdns
+
+echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
 echo " \e[1m  salam @satriawandicky \e[0m"
 echo " \e[1m  Happy AdBlocking :)\e[0m"
 echo "\n\n"
-
-sudo pihole -g
-sudo pihole restartdns
