@@ -28,7 +28,7 @@ curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard
 echo " ${TICK} \e[32m Menambahkan domain ke daftar wildcard pihole... \e[0m"
 sleep 0.1
 echo " ${TICK} \e[32m menghapus kemungkinan domain yang sama... \e[0m"
-"${PIHOLE_LOCATION}"/wildcard.txt | sort | uniq > "${PIHOLE_LOCATION}"/wildcard.txt
+"${PIHOLE_LOCATION}"/wildcard.txt && cat "${PIHOLE_LOCATION}"/wildcard.txt | sort | uniq > "${PIHOLE_LOCATION}"/wildcard.txt
 
 sleep 1
 
