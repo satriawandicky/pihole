@@ -35,7 +35,7 @@ echo " [...] \e[32m mengupdate list berikut.... \e[0m"
 echo "\n"
 
 echo "\n"
-cat "${PIHOLE_LOCATION}"/wildcard.txt  | sort | uniq > "${PIHOLE_LOCATION}"/wildcard.txt
+"${PIHOLE_LOCATION}"/wildcard.txt | sort | uniq > cat "${PIHOLE_LOCATION}"/wildcard.txt
 
 sleep 1
 
