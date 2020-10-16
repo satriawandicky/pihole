@@ -35,9 +35,10 @@ echo " [...] \e[32m mengupdate list berikut.... \e[0m"
 echo "\n"
 
 echo "\n"
-"${PIHOLE_LOCATION}"/wildcard.txt | sort | uniq > cat "${PIHOLE_LOCATION}"/wildcard.txt
-
+mv "${PIHOLE_LOCATION}"/wildcard.txt "${PIHOLE_LOCATION}"/up-wildcard.txt && cat "${PIHOLE_LOCATION}"/up-wildcard.txt | sort | uniq > "${PIHOLE_LOCATION}"/wildcard.txt
 sleep 1
+
+cat /etc/pihole/wildcard.txt
 
 ${GRAVITY_UPDATE_COMMAND} $(cat /etc/pihole/wildcard.txt | xargs) > /dev/null
 echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
