@@ -14,12 +14,26 @@ if [ "$(id -u)" != "0" ] ; then
 	exit 2
 fi
 
-curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard.txt | sudo tee -a "${PIHOLE_LOCATION}"/wildcard.txt >/dev/null
-echo " ${TICK} \e[32m Menambhakan domain ke daftar wildcard pihole... \e[0m"
+#undo wildcard
+GRAVITY_UNDO_WILD="pihole --wild -d"
+curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard.txt | sudo tee -a "${PIHOLE_LOCATION}"/wildcard.txt > /dev/null
+mv "${PIHOLE_LOCATION}"/wildcard.txt "${PIHOLE_LOCATION}"/wildcard.txt.old && cat "${PIHOLE_LOCATION}"/wildcard.txt.old | sort | uniq > "${PIHOLE_LOCATION}"/undo-wildcard.txt
+echo " [...] \e[32m undo list sebelumnya....harap tunggu \e[0m"
+${GRAVITY_UNDO_WILD} $(cat /etc/pihole/undo-wildcard.txt | xargs) > /dev/null
+echo " ${TICK} \e[32m Selesai undo wildcard... \e[0m"
+
+sleep 1
+
+
+curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/wildcard.txt | sudo tee -a "${PIHOLE_LOCATION}"/wildcard.txt > /dev/null
+echo " ${TICK} \e[32m Menambahkan domain ke daftar wildcard pihole... \e[0m"
 sleep 0.1
 echo " ${TICK} \e[32m menghapus kemungkinan domain yang sama... \e[0m"
-mv "${PIHOLE_LOCATION}"/wildcard.txt "${PIHOLE_LOCATION}"/wildcard.txt.old && cat "${PIHOLE_LOCATION}"/wildcard.txt.old && cat "${PIHOLE_LOCATION}"/wildcard.txt | sort | uniq >> "${PIHOLE_LOCATION}"/wildcard.txt
+"${PIHOLE_LOCATION}"/wildcard.txt | sort | uniq > "${PIHOLE_LOCATION}"/wildcard.txt
 
+sleep 1
+
+cat "${PIHOLE_LOCATION}"/wildcard.txt
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
 ${GRAVITY_UPDATE_COMMAND} $(cat /etc/pihole/wildcard.txt | xargs) > /dev/null
 echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
