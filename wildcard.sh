@@ -33,7 +33,7 @@ sleep 1
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
 echo " [...] \e[32m mengupdate list berikut.... \e[0m"
 echo "\n"
-sort -u "${PIHOLE_LOCATION}"/wildcard.txt > "${PIHOLE_LOCATION}"/wildcard.txt
+sort -u /etc/pihole/wildcard.txt > /etc/pihole/wildcard.txt
 
 echo "\n"
 
