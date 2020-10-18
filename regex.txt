@@ -143,5 +143,9 @@ google-{0,}(analytics{0,}|(ad|tag)manager)\.[a-z]{2,7}$
 (\.|^)track18\.com$
 (\.|^)clicahy\.com$
 #wildcard by pihole
+
 #(\.|^)porn\.com$
+#(\.|^)jav\.com$
+
+
 

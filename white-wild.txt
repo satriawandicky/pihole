@@ -3,3 +3,9 @@ debian.com
 ubuntu.com
 microsoft.com
 apple.com
+astra.com
+tiket.com
+gojek.com
+tokopedia.com
+bukalapak.com
+trivago.com

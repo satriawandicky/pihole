@@ -29,4 +29,5 @@ echo " \e[1m  salam @satriawandicky \e[0m"
 echo " \e[1m  Happy AdBlocking :)\e[0m"
 echo "\n\n"
 
+sudo pihole -g
 sudo pihole restartdns
