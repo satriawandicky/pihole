@@ -14,6 +14,17 @@ if [ "$(id -u)" != "0" ] ; then
 	exit 2
 fi
 
+# undo whitelist
+GRAVITY_UNDO_WHITELIST="pihole -w -d"
+mv "${PIHOLE_LOCATION}"/whitelist.txt "${PIHOLE_LOCATION}"/whitelist.txt.old && cat "${PIHOLE_LOCATION}"/whitelist.txt.old | sort | uniq > "${PIHOLE_LOCATION}"/undo-whitelist.txt
+echo " [...] \e[32m undo list sebelumnya....harap tunggu \e[0m"
+${GRAVITY_UNDO_WHITELIST} $(cat /etc/pihole/undo-whitelist.txt | xargs) > /dev/null
+echo " ${TICK} \e[32m Selesai undo whitelist... \e[0m"
+echo " \e[1m ................... \e[0m"
+sleep 0.1
+
+
+# add new whitelist 
 curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/whitelist.txt | sudo tee -a "${PIHOLE_LOCATION}"/whitelist.txt >/dev/null
 echo -e " ${TICK} \e[32m Menambhakan domain ke daftar whitelist pihole... \e[0m"
 sleep 0.1
@@ -22,7 +33,7 @@ mv "${PIHOLE_LOCATION}"/whitelist.txt "${PIHOLE_LOCATION}"/whitelist.txt.old && 
 
 echo -e " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
 ${GRAVITY_UPDATE_COMMAND} $(cat /etc/pihole/whitelist.txt | xargs) > /dev/null
- 
+
 echo -e " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
 echo -e " ${TICK} \e[32m Selesai... \e[0m"
 
