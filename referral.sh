@@ -19,8 +19,8 @@ then
 	curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/referral.txt | sudo tee -a "${PIHOLE_LOCATION}"/whitelist.txt >/dev/null
 	echo -e " ${TICK} \e[32m Menambahkan domain ke whitelist... \e[0m"
 	sleep 0.5
+	
 	echo -e " ${TICK} \e[32m Menghapus Duplikasi... \e[0m"
-
 	mv "${PIHOLE_LOCATION}"/whitelist.txt /etc/pihole/whitelist.txt.old && cat "${PIHOLE_LOCATION}"/whitelist.txt.old | sort | uniq >> "${PIHOLE_LOCATION}"/whitelist.txt
 
 	wait
@@ -32,6 +32,6 @@ then
 	echo -e "\n\n"
 
 fi
-
+sudo pihole -g
 sudo pihole restartdns
 

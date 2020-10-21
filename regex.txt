@@ -16,8 +16,6 @@
 ^(.+[_.-])?ad[sxv]?[0-9]*[_.-]
 ^(www[0-9]*\.)?xn--
 
-# new
-
 ^(.+[-_.])??m?ad[sxv]?[0-9]*[-_.]
 ^(.+[-_.])??xn--
 ^traff(ic)?[-.]
@@ -142,7 +140,6 @@ google-{0,}(analytics{0,}|(ad|tag)manager)\.[a-z]{2,7}$
 (\.|^)aklamio\.com$
 (\.|^)track18\.com$
 (\.|^)clicahy\.com$
-#wildcard by pihole
 
 #(\.|^)porn\.com$
 #(\.|^)jav\.com$

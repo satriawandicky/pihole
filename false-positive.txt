@@ -1,0 +1,1 @@
+(.*.|^)((think)?with)?google($|((adservices|apis|mail|static|syndication|tagmanager|tagservices|usercontent|zip|-analytics)($|..+)))
