@@ -36,10 +36,10 @@ ${GRAVITY_UPDATE_COMMAND} $(cat /etc/pihole/whitelist.txt | xargs) > /dev/null
 
 echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
 echo " ${TICK} \e[32m ========================================\e[0m"
-# echo " \e[1m script berikut merupakan referall code yang terkadang false positif detection dari pihole.  \e[0m"
-read -p "apakah anda ingin memasukkan referral site kedalam whitelist (Y/N)? " -n 1 -r
+echo " \e[1m script berikut merupakan referall code yang terkadang false positif detection dari pihole.  \e[0m"
+read -p "apakah anda ingin memasukkan referral site kedalam whitelist (y/n)? " REPLY
 echo   
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [ "$REPLY" = "y" ];
 then
 
 	echo " \e[1m Script ini akan mendownload dan menambahkan domain referal code ke whitelist.txt \e[0m"
@@ -64,9 +64,6 @@ then
 	echo "\n\n"
 
 fi
-
-
-
 
 echo " \e[1m  salam @satriawandicky \e[0m"
 echo " \e[1m  Happy AdBlocking :)\e[0m"
