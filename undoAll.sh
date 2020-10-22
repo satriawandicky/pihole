@@ -1,6 +1,6 @@
 TICK="[\e[32m ✔ \e[0m]"
 PIHOLE_LOCATION="/etc/pihole"
-GRAVITY_UNDO_BLOCKLIST="pihole -b -d"
+GRAVITY_UNDO_BLACKLIST="pihole -b -d"
 GRAVITY_UNDO_REGEX="pihole --regex -d"
 GRAVITY_UNDO_WILD="pihole --wild -d"
 
@@ -19,23 +19,23 @@ if [ "$(id -u)" != "0" ] ; then
 	exit 2
 fi
 
-echo " ${TICK} \e[32m Undo wildcard, whitelist, blocklist dari local list... \e[0m"
+echo " ${TICK} \e[32m Undo wildcard, whitelist, blacklist dari local list... \e[0m"
 
 sleep 1
-#undo blocklist
+#undo blacklist
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
-${GRAVITY_UNDO_BLOCKLIST} $(cat /etc/pihole/blocklist.txt | xargs) > /dev/null
+${GRAVITY_UNDO_BLACKLIST} $(cat /etc/pihole/blacklist.txt | xargs) > /dev/null
 echo " ${TICK} \e[32m Selesai undo blacklist...... \e[0m"
 sleep 1
-#undo regex blocklist
+#undo regex blacklist
 echo " [...] \e[32m Pi-hole gravity memperbarui txt....harap tunggu \e[0m"
 ${GRAVITY_UNDO_REGEX} $(cat /etc/pihole/regex.txt | xargs) > /dev/null
-echo " ${TICK} \e[32m Selesai undo regex blocklist... \e[0m"
+echo " ${TICK} \e[32m Selesai undo regex blacklist... \e[0m"
 sleep 1
-#undo wildcard blocklist
+#undo wildcard blacklist
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
 ${GRAVITY_UNDO_WILD} $(cat /etc/pihole/wildcard.txt | xargs) > /dev/null
-echo " ${TICK} \e[32m Selesai undo wildcard blocklist... \e[0m"
+echo " ${TICK} \e[32m Selesai undo wildcard blacklist... \e[0m"
 sleep 1
 # undo whitelist
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"

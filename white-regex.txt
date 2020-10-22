@@ -1,3 +1,4 @@
 # bisa regex dari perusahaan maupun instansi
 ^(.+.)?cdn.ampproject.org$
+(\.|^)googleusercontent\.com$
 

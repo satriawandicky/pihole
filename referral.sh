@@ -2,8 +2,7 @@ TICK="[\e[32m ✔ \e[0m]"
 PIHOLE_LOCATION="/etc/pihole"
 GRAVITY_UPDATE_COMMAND="pihole -w -q"
 echo -e " \e[1m script berikut merupakan referall code yang terkadang false positif detection dari pihole.  \e[0m"
-read -p "apakah anda ingin memasukkan referral site kedalam whitelist (Y/N)? " -n 1 -r
-echo   
+read -p "apakah anda ingin memasukkan referral site kedalam whitelist (Y/N)? " REPLY  
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 

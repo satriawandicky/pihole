@@ -14,6 +14,16 @@ if [ "$(id -u)" != "0" ] ; then
 	exit 2
 fi
 
+#UNDO WHITE REGEX OLD
+GRAVITY_UNDO_REGEX="pihole --white-regex -d"
+mv "${PIHOLE_LOCATION}"/white-regex.txt "${PIHOLE_LOCATION}"/white-regex.txt.old && cat "${PIHOLE_LOCATION}"/white-regex.txt.old | sort | uniq > "${PIHOLE_LOCATION}"/undo-white-regex.txt
+echo " [....] \e[32m undo list sebelumnya....harap tunggu \e[0m"
+${GRAVITY_UNDO_REGEX} $(cat /etc/pihole/undo-white-regex.txt | xargs) > /dev/null
+echo " ${TICK} \e[32m Selesai undo regex... \e[0m"
+echo " \e[1m .................................. \e[0m"
+sleep 0.1
+
+
 curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/white-regex.txt | sudo tee -a "${PIHOLE_LOCATION}"/white-regex.txt >/dev/null
 echo " ${TICK} \e[32m Menambhakan domain ke daftar white-regex pihole... \e[0m"
 sleep 0.1
