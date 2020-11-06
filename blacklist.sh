@@ -21,7 +21,7 @@ echo " ${TICK} \e[32m Selesai undo blacklist... \e[0m"
 echo " \e[1m .................................. \e[0m"
 sleep 0.1
 # add new bloclist
-curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/blacklist.txt | sudo tee -a "${PIHOLE_LOCATION}"/blacklist.txt >/dev/null
+curl -sS https://raw.githubusercontent.com/satriawandicky/pihole/master/blacklist.txt | sudo tee -a "${PIHOLE_LOCATION}"/blacklist.txt > /dev/null
 echo " ${TICK} \e[32m Menambhakan domain ke daftar blacklist pihole... \e[0m"
 sleep 0.1
 echo " ${TICK} \e[32m menghapus kemungkinan domain yang sama... \e[0m"
