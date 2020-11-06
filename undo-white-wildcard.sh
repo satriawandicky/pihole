@@ -13,7 +13,7 @@ if [ "$(id -u)" != "0" ] ; then
 	exit 2
 fi
 echo " [...] \e[32m Pi-hole gravity memperbarui list....harap tunggu \e[0m"
-${GRAVITY_UNDO_WHITE_WILD} $(cat /etc/pihole/white-wildcard.txt | xargs) > /dev/null
+${GRAVITY_UNDO_WHITE_WILD} $(cat /etc/pihole/white-wild.txt | xargs) > /dev/null
 echo " ${TICK} \e[32m Pi-hole's gravity berhasil di update \e[0m"
 echo " ${TICK} \e[32m Selesai... \e[0m"
 echo " \e[1m  salam @satriawandicky \e[0m"
