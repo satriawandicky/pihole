@@ -1,3 +1,4 @@
+ad.fly
 www.facebook.com
 id-id.facebook.com
 b-api.facebook.com
