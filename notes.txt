@@ -6,3 +6,11 @@ qrencode -t ansiutf8 < /etc/wireguard/clients/mobile.conf
 configuration with openVPN need change and add 
 cipher AES-128-GCM
 redirect-gateway def1
+
+MTU issue with wireguard and openVPN
+---openVPN
+tun-mtu 1500
+compress lz4-v2
+
+---wireguard
+reconfigure interface with custom MTU
