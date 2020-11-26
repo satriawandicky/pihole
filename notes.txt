@@ -1,3 +1,8 @@
 make file with qrcode wireguard
 
 qrencode -t ansiutf8 < /etc/wireguard/clients/mobile.conf
+
+
+configuration with openVPN need change and add 
+cipher AES-128-GCM
+redirect-gateway def1
